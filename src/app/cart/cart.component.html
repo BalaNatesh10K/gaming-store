@@ -1,0 +1,34 @@
+<div class="body">
+    <div class="container">
+        <br>
+        <h2 class="text-center mb-4 text-white">Your Cart</h2>
+        
+        <div *ngIf="cartItems.length === 0" class="text-center text-white">
+          <p>Your cart is empty!</p>
+        </div>
+        
+        <div *ngFor="let item of cartItems" class="card mb-3 shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-2">
+              <img [src]="item.image" class="img-fluid rounded-start" alt="{{ item.name }}">
+            </div>
+            <div class="col-md-10 d-flex align-items-center">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">Price: ${{ item.price }}</p>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-outline-primary me-2" (click)="decreaseQuantity(item)">-</button>
+                  <span class="text-black">{{ item.quantity }}</span>
+                  <button class="btn btn-outline-primary ms-2" (click)="increaseQuantity(item)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-end mt-4 text-white">
+          <h5>Total Price: ${{ totalPrice() }}</h5>
+        </div>
+      </div>
+</div>
+  

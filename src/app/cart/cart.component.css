@@ -1,0 +1,41 @@
+.body{
+    height: 100vh; /* Ensure the body takes the full height */
+    margin: 0; /* Remove default margin */
+background-color: #000;
+    
+}
+
+.container {
+    max-width: 800px; /* Center and limit width */
+    height: 100vh; /* Ensure container takes full height */
+}
+
+.card {
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    background-color: rgba(255, 255, 255); /* Semi-transparent white background */
+    border: none; /* Remove card border */
+}
+
+.card-title {
+    font-weight: bold; /* Make the title bold */
+    color: #000; /* Black color for titles */
+}
+
+.card-text {
+    color: #000; /* Black text for card text */
+}
+
+.btn-outline-primary {
+    color: #000; /* White text */
+    border-color: #007bff; /* Bootstrap primary color */
+}
+
+
+.text-white {
+    color: #000; /* White text for contrast, use only where necessary */
+}
+
+.img-fluid {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
