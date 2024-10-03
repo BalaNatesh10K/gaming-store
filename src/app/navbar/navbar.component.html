@@ -1,45 +1,69 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/logo.png" alt="GameNation Logo" height="40" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+  <div class="container-fluid">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/logo.png" alt="GameNation Logo" height="40" />
+    </a>
+
+    <!-- Toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Categories with dynamic subcategories -->
+        <li *ngFor="let category of categories" class="nav-item dropdown" [ngClass]="{'dropdown': category.subcategories.length > 0}">
+          <!-- Parent category (with or without dropdown) -->
+          <a *ngIf="category.subcategories.length > 0" class="nav-link dropdown-toggle" href="#" id="{{category.name}}Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{category.name}}
+          </a>
+          <a *ngIf="category.subcategories.length === 0" class="nav-link" href="#">
+            {{category.name}}
+          </a>
+
+          <!-- Dropdown items -->
+          <ul *ngIf="category.subcategories.length > 0" class="dropdown-menu bg-dark" [attr.aria-labelledby]="category.name + 'Dropdown'">
+            <li *ngFor="let sub of category.subcategories">
+              <a class="dropdown-item text-light" href="#">{{sub}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Search box -->
+      <form class="d-flex me-3" style="flex-grow: 1; max-width: 300px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 25px;">
+        <button class="btn btn-outline-light" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+      <!-- Login button with popover -->
+      <button id="loginButton" class="btn btn-outline-light ms-3" type="button" (click)="toggleLoginPopover()">
+        <i class="bi bi-person-fill"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li *ngFor="let category of categories" class="nav-item" [ngClass]="{'dropdown': category.subcategories.length > 0}">
-            <a *ngIf="category.subcategories.length > 0" class="nav-link dropdown-toggle" href="#" id="{{category.name}}Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{category.name}}
-            </a>
-            <a *ngIf="category.subcategories.length === 0" class="nav-link" href="#">
-              {{category.name}}
-            </a>
-            <ul *ngIf="category.subcategories.length > 0" class="dropdown-menu bg-dark" [attr.aria-labelledby]="category.name + 'Dropdown'">
-              <li *ngFor="let sub of category.subcategories">
-                <a class="dropdown-item text-light" href="#">{{sub}}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex me-3">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-        <button id="loginButton" class="btn btn-outline-light ms-3" type="button" (click)="toggleLoginPopover()">
-          Login
-        </button>
-        <div *ngIf="showLoginPopover" class="popover bs-popover-bottom" style="position: absolute; right: 50px; top: 70px; z-index: 9999;">
-          <div class="popover-arrow"></div>
-          <div class="popover-body">
-            <app-login></app-login>
-            <button class="btn btn-link text-danger w-100" (click)="toggleLoginPopover()">Close</button>
-          </div>
-        </div>
-        <button class="btn btn-outline-light ms-2" type="button">
-          Cart
-        </button>
-      </div>
+
+<!-- Login popover with animation -->
+<div *ngIf="showLoginPopover" class="popover bs-popover-bottom" 
+     [ngClass]="{'show': showLoginPopover}" 
+     style="position: absolute; right: 50px; top: 70px; z-index: 9999;">
+  <div class="popover-arrow"></div>
+  <div class="popover-body bg-dark p-3 text-light rounded">
+    <app-login></app-login>
+    <button class="btn btn-link text-danger w-100" (click)="toggleLoginPopover()">Close</button>
+  </div>
+</div>
+
+      <!-- Cart button -->
+      <button class="btn btn-outline-light ms-2 position-relative" type="button">
+        <i class="bi bi-cart2"></i>
+        <!-- Optional badge for cart item count -->
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </button>
     </div>
-  </nav>
-  
+  </div>
+</nav>
