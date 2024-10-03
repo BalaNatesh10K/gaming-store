@@ -16,8 +16,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: skyblue; /* Background on hover */
-  color: #fff; /* Text color on hover */
+  background-color: #333; 
+  color: #fff; 
 }
 
 /* Styles for non-dropdown links */
