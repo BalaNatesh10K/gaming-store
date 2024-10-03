@@ -1,0 +1,43 @@
+/* login-popover.component.css */
+
+.popover-container {
+    width: 200px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1rem;
+}
+
+.popover-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.popover-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popover-input {
+    background-color: #222;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+.popover-button {
+    background-color: #007bff;
+    border: none;
+}
+
+.popover-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #0d6efd; /* Bootstrap primary link color */
+    transition: color 0.3s;
+}
+
+.popover-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}

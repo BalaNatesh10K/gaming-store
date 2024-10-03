@@ -1,13 +1,14 @@
 import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports: [NgFor, NgClass, CommonModule, NgIf,LoginComponent]
+  imports: [NgFor, NgClass, CommonModule, NgIf,LoginComponent, RouterLink]
 })
 export class NavbarComponent {
   categories = [
@@ -21,5 +22,11 @@ export class NavbarComponent {
 
   toggleLoginPopover() {
     this.showLoginPopover = !this.showLoginPopover;
+  }
+
+  constructor(private route: Router){}
+  routeRegister(){
+    this.toggleLoginPopover();
+    this.route.navigate(['/register']);
   }
 }

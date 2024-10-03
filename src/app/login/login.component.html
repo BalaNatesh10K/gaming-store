@@ -2,14 +2,15 @@
     <h5 class="text-center mb-3">Login</h5>
     <form id="loginForm">
       <div class="mb-3">
-        <label for="username" class="form-label">Username:</label>
-        <input type="text" class="form-control" id="username" name="username" required>
+        <input type="text" placeholder="Username" class="form-control" id="username" name="username" required>
       </div>
       <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
       </div>
       <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
+    <div class="text-center mt-3">
+      <a routerLink="register" routerLinkActive="active" class="text-decoration-none" (click)="registerClick()">Don't have an account? Register here</a>
+  </div>
   </div>
   
