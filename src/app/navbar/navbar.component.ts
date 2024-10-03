@@ -6,6 +6,7 @@ import { LoginComponent } from '../login/login.component';
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
   imports: [NgFor, NgClass, CommonModule, NgIf,LoginComponent]
 })
 export class NavbarComponent {
