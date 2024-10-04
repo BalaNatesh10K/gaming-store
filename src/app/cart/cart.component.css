@@ -1,22 +1,19 @@
-.body{
+body {
     height: 100vh; /* Ensure the body takes the full height */
     margin: 0; /* Remove default margin */
-/* background-color: #000; */
-background-image: url('../../assets/register-background.jpg'); /* Adjust this path to your image */
-background-size: cover;
-background-position: center;
-
+    background-image: url('../../assets/register-background.jpg'); /* Adjust this path to your image */
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    max-width: 600px; /* Center and limit width */
-    /* height: 100vh; Ensure container takes full height */
+    max-width: 900px; /* Increase max-width to fit the new layout */
     backdrop-filter: blur(5px);
 }
 
 .card {
     border-radius: 0.5rem; /* Slightly rounded corners */
-    background-color: rgba(255, 255, 255); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     border: none; /* Remove card border */
 }
 
@@ -29,17 +26,21 @@ background-position: center;
     color: #000; /* Black text for card text */
 }
 
-.btn-outline-primary {
-    color: #000; /* White text */
-    border-color: #007bff; /* Bootstrap primary color */
-}
-
-
-.text-white {
-    color: #000; /* White text for contrast, use only where necessary */
+.btn-info {
+    background-color: #007bff; /* Adjust button color */
+    color: white; /* Ensure text is white on buttons */
 }
 
 .img-fluid {
     max-width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
+}
+
+.text-white {
+    color: #000; /* Use this for white text in specific areas */
+}
+
+#card-details{
+    background-color: rgb(13, 119, 233);
+    border-radius: 25px;
 }
