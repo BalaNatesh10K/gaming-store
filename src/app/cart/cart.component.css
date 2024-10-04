@@ -1,13 +1,17 @@
 .body{
     height: 100vh; /* Ensure the body takes the full height */
     margin: 0; /* Remove default margin */
-background-color: #000;
-    
+/* background-color: #000; */
+background-image: url('../../assets/register-background.jpg'); /* Adjust this path to your image */
+background-size: cover;
+background-position: center;
+
 }
 
 .container {
-    max-width: 800px; /* Center and limit width */
-    height: 100vh; /* Ensure container takes full height */
+    max-width: 600px; /* Center and limit width */
+    /* height: 100vh; Ensure container takes full height */
+    backdrop-filter: blur(5px);
 }
 
 .card {
