@@ -41,20 +41,9 @@
       </form>
 
       <!-- Login button with popover -->
-      <button id="loginButton" class="btn btn-outline-light ms-3" type="button" (click)="toggleLoginPopover()">
+      <button class="btn btn-outline-light ms-3" routerLink="/login" type="button">
         <i class="bi bi-person-fill"></i>
       </button>
-
-<!-- Login popover with animation -->
-<div *ngIf="showLoginPopover" class="popover bs-popover-bottom" 
-     [ngClass]="{'show': showLoginPopover}" 
-     style="position: absolute; right: 50px; top: 70px; z-index: 9999;">
-  <div class="popover-arrow"></div>
-  <div class="popover-body bg-dark p-3 text-light rounded">
-    <app-login></app-login>
-    <button class="btn btn-link text-danger w-100" (click)="toggleLoginPopover()">Close</button>
-  </div>
-</div>
 
       <!-- Cart button -->
       <button class="btn btn-outline-light ms-2 position-relative" routerLink="/cart" type="button">

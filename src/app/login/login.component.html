@@ -1,16 +1,25 @@
-<div class="p-3" style="width: 200px;">
-    <h5 class="text-center mb-3">Login</h5>
-    <form id="loginForm">
-      <div class="mb-3">
-        <input type="text" placeholder="Username" class="form-control" id="username" name="username" required>
-      </div>
-      <div class="mb-3">
-        <input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Submit</button>
-    </form>
-    <div class="text-center mt-3">
-      <a routerLink="register" routerLinkActive="active" class="text-decoration-none" (click)="registerClick()">Don't have an account? Register here</a>
+<body>
+<div class="main">  
+  <input type="checkbox" id="chk" aria-hidden="true">
+
+  <div class="signup">
+      <form>
+          <label for="chk" aria-hidden="true">Sign up</label>
+          <input type="text" name="txt" placeholder="User name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="pswd" placeholder="Password" required>
+          <button>Sign up</button>
+      </form>
   </div>
+
+  <div class="login">
+      <form>
+          <label for="chk" aria-hidden="true">Login</label>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="pswd" placeholder="Password" required>
+          <button>Login</button>
+      </form>
   </div>
-  
+
+</div>
+</body>
