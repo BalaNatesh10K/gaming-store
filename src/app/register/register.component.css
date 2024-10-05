@@ -24,7 +24,7 @@ form {
 }
 
 .registration-card {
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
