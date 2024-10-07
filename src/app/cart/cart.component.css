@@ -40,7 +40,14 @@ body {
     color: #000; /* Use this for white text in specific areas */
 }
 
-#card-details{
+#card-details {
     background-color: rgb(13, 119, 233);
     border-radius: 25px;
+}
+
+.cart-items-container {
+    max-height: 450px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    border-radius: 20px;
 }

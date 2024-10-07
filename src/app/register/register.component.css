@@ -1,19 +1,11 @@
 /* register.component.css */
 
-body {
+body{
     margin: 0;
     height: 100vh;
     background-image: url('../../assets/register-background.jpg'); /* Adjust this path to your image */
     background-size: cover;
     background-position: center;
-    backdrop-filter: blur(5px); /* Adjust the blur effect */
-    overflow: hidden; /* Prevent overflow */
-}
-
-form {
-    background-color: rgba(255, 255, 255 0.8); /* Semi-transparent dark background for the form */
-    padding: 20px; /* Add some padding */
-    border-radius: 0.5rem; /* Rounded corners */
 }
 
 .registration-container {
@@ -21,42 +13,30 @@ form {
     justify-content: center;
     align-items: center;
     height: 100%;
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
 }
 
 .registration-card {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 500px; /* Adjust as necessary */
-    margin: auto; /* Center the container */
-    position: relative; /* Positioning for the container */
-    z-index: 1; /* Bring the container above the blurred background */
+    max-width: 400px; /* Adjust as necessary */
 }
 
 h5 {
-    color: #000000; /* Text color for the header */
+    color: #333; /* Text color for the header */
 }
 
 .form-control {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent input background */
     border: 1px solid #ccc;
-    border-radius: 0.5rem; /* Rounded corners for inputs */
-    transition: border-color 0.3s ease; /* Smooth transition */
-}
-
-.form-select {
-    border-radius: 0.5rem; /* Rounded corners for select */
 }
 
 .btn-primary {
     background-color: #007bff; /* Bootstrap primary button color */
-    border: none; /* Remove default border */
-}
-
-.btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    border: none;
 }
 
 .text-center a {

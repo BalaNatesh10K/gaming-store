@@ -9,8 +9,16 @@
                             <h5 class="mb-4">Manage Products</h5>
                             <hr>
 
+                            <div *ngIf="loading" class="text-center">
+                                <p>Loading products...</p>
+                            </div>
+
+                            <div *ngIf="errorMessage" class="alert alert-danger">
+                                {{ errorMessage }}
+                            </div>
+
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" *ngIf="!loading && !errorMessage">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
@@ -25,9 +33,9 @@
                                             <td>{{ product.name }}</td>
                                             <td>${{ product.price }}</td>
                                             <td>
-                                                <a [routerLink]="['/update-product', product.id]" class="btn btn-warning btn-sm me-2">Update</a>
+                                                <a  [routerLink]="['/update-product', product.id]" class="btn btn-warning btn-sm me-2">Update</a>
                                                 <button (click)="deleteProduct(product.id)" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash-alt"></i>
+                                                    <i class="bi bi-trash" title="delete"></i>
                                                 </button>
                                             </td>
                                         </tr>

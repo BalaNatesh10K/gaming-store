@@ -8,7 +8,8 @@ body {
     background-position: center;
     backdrop-filter: blur(5px); /* Adjust the blur effect */
     height: 100vh; /* Ensure full height */
-    margin: 0; /* Remove default margin */
+     /* Remove default margin */
+    margin-top: 20px;
     overflow: hidden; /* Prevent overflow */
 }
 
@@ -57,4 +58,13 @@ body {
     .table th, .table td {
         padding: 0.5rem; /* Less padding for mobile */
     }
+}
+.table-responsive {
+    max-height: 475px; /* Set the maximum height you want */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Optional: Style for the scrollbar */
+.table-responsive::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
 }
