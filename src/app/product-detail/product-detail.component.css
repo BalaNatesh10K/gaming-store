@@ -1,0 +1,26 @@
+.background-image {
+    background-image: url('../../assets/register-background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .product-card {
+    background: rgba(255, 255, 255, 0.9); /* White with 90% opacity */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  

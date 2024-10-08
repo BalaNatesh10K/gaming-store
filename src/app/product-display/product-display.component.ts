@@ -92,6 +92,6 @@ export class ProductDisplayComponent implements OnInit {
     };
     
     this.cartService.addToCart(cartItem); // Use the CartService to add item
-    console.log(`${product.name} added to cart!`);
+    console.log("${product.name} added to cart!");
   }
 }
