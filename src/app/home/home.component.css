@@ -10,3 +10,7 @@
 .animated-zoom {
     animation: zoomInOut 3s ease-in-out infinite; /* Adjust duration as needed */
 }
+
+body{
+    background-color: black;
+}

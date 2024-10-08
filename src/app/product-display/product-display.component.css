@@ -6,6 +6,7 @@ body {
   .container-fluid {
     background-color: black;
     color: white;
+    overflow: scroll;
   }
   
   .category-container {
@@ -39,6 +40,7 @@ body {
     transition: transform 0.3s, background-color 0.3s;
     cursor: pointer;
     border: 1px solid #ddd;
+    font-size: smaller;
     border-radius: 8px;
     overflow: hidden;
     background-color: #444;
