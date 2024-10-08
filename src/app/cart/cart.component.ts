@@ -6,7 +6,7 @@ import { ProductService } from '../services/productService/product-service.servi
 import { ImageService } from '../services/imageService/image-service.service'; // Assuming you have this service
 import { forkJoin, map } from 'rxjs';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   standalone: true,
-  imports: [NgFor, CommonModule, NgIf, RouterLink, FormsModule]
+  imports: [NgFor, CommonModule, NgIf, RouterLink, FormsModule, RouterOutlet]
 })
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
@@ -23,7 +23,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService, 
-    private cartItemService: CartItemService, 
+    private cartItemService: CartItemService,
+    private route: Router, 
     private productService: ProductService,
     private imageService: ImageService // Injecting ImageService
   ) {}

@@ -4,7 +4,7 @@ import { ImageService } from '../services/imageService/image-service.service';
 import { CategoryService } from '../services/categoryService/category-service.service';
 import { Product } from '../models/productModel/product';
 import { RouterLink } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Category } from '../models/categoryModel/category';
 import { CartItem } from '../models/cartItemModel/cart-item';
 import { CartItemService } from '../services/cartItemService/cart-item-service.service';
@@ -13,7 +13,7 @@ import { CartService } from '../services/cartService/cart-service.service';
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [RouterLink, NgFor],
+  imports: [RouterLink, NgFor, NgIf],
   templateUrl: './product-display.component.html',
   styleUrls: ['./product-display.component.css']
 })
