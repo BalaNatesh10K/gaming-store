@@ -25,7 +25,7 @@
           <!-- Dropdown items -->
           <ul *ngIf="category.subcategories.length > 0" class="dropdown-menu bg-dark" [attr.aria-labelledby]="category.name + 'Dropdown'">
             <li *ngFor="let sub of category.subcategories">
-              <a class="dropdown-item text-light" href="#">{{sub}}</a>
+              <a class="dropdown-item text-light" href="#" (click)="navigateToCategory(sub)">{{sub}}</a>
             </li>
           </ul>
         </li>
@@ -33,21 +33,21 @@
 
       <!-- Search box -->
       <form class="d-flex me-3" style="flex-grow: 1; max-width: 300px;" (ngSubmit)="onSearch(searchInput)">
-          <input type="text" style="border-radius: 10px; height: 40px; margin-top: -2px; padding-left: 10px;"
-                 matInput
-                 placeholder="Search" 
-                 aria-label="Search"
-                 [(ngModel)]="searchInput"
-                 name="searchInput"  
-                 (input)="filterOptions()"
-                 [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" >
-            <mat-option *ngFor="let option of filteredOptions" [value]="option">
-              {{ option }}
-            </mat-option>
-          </mat-autocomplete>
+        <input type="text" style="border-radius: 10px; height: 40px; margin-top: -2px; padding-left: 10px;"
+               matInput
+               placeholder="Search" 
+               aria-label="Search"
+               [(ngModel)]="searchInput"
+               name="searchInput"  
+               (input)="filterOptions()"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
         <button class="btn btn-outline-light ms-2 mt-0" type="submit">
-          <i class="bi bi-search "></i>
+          <i class="bi bi-search"></i>
         </button>
       </form>
 
@@ -56,9 +56,8 @@
         <i class="bi bi-person-fill"></i>
       </button>
 
-
       <!-- Cart button -->
-      <button class="btn btn-outline-light ms-2 position-relative" type="button"  routerLink="/cart">
+      <button class="btn btn-outline-light ms-2 position-relative" type="button" routerLink="/cart">
         <i class="bi bi-cart2"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{cartItemCount}}</span>
       </button>

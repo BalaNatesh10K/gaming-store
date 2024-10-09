@@ -31,5 +31,4 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<OrderItem> orderItems;
 
-    // Additional fields can be added here for order details like status, total amount, etc.
 }
